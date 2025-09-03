@@ -1,0 +1,217 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #fdfbe7 0%, #e2eddc 25%, #c9c8ac 50%, #a09d7e 75%, #7a7651 100%);
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 700px;
+    text-align: center;
+}
+
+.content {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    padding: 40px 30px;
+    box-shadow: 0 20px 40px rgba(122, 118, 81, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.logo-container {
+    margin-bottom: 30px;
+}
+
+.logo {
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 15px 30px rgba(122, 118, 81, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 40px rgba(122, 118, 81, 0.4);
+}
+
+.text-container {
+    margin-bottom: 40px;
+}
+
+.main-text {
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.6;
+    color: #7a7651;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 4px rgba(122, 118, 81, 0.1);
+}
+
+.buttons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    min-width: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn-whatsapp {
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    color: white;
+    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+}
+
+.btn-whatsapp:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(37, 211, 102, 0.4);
+}
+
+.btn-instagram {
+    background: linear-gradient(135deg, #E4405F, #C13584, #833AB4);
+    color: white;
+    box-shadow: 0 8px 20px rgba(228, 64, 95, 0.3);
+}
+
+.btn-instagram:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(228, 64, 95, 0.4);
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+
+.btn:hover .icon {
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .content {
+        padding: 30px 20px;
+        border-radius: 20px;
+    }
+    
+    .logo {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .main-text {
+        font-size: 1.2rem;
+    }
+    
+    .btn {
+        font-size: 1rem;
+        padding: 12px 25px;
+        min-width: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 15px;
+    }
+    
+    .content {
+        padding: 25px 15px;
+    }
+    
+    .logo {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .main-text {
+        font-size: 1.1rem;
+    }
+    
+    .btn {
+        font-size: 0.95rem;
+        padding: 10px 20px;
+        min-width: 160px;
+    }
+    
+    .buttons-container {
+        gap: 12px;
+    }
+}
+
+/* Animation for page load */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.content {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.logo {
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.main-text {
+    animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+.btn:nth-child(1) {
+    animation: fadeInUp 0.8s ease-out 0.6s both;
+}
+
+.btn:nth-child(2) {
+    animation: fadeInUp 0.8s ease-out 0.8s both;
+}
+
